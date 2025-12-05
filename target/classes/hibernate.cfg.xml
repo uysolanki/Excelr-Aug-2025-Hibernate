@@ -15,6 +15,12 @@
 	<property name="format_sql">true</property>
 	
 	<mapping class="com.excelr.ExcelrAugHibernate.entity.Student"/>
+	<mapping class="com.excelr.ExcelrAugHibernate.entity.State"/>
+	<mapping class="com.excelr.ExcelrAugHibernate.entity.ChiefMinister"/>
+	<mapping class="com.excelr.ExcelrAugHibernate.entity.Dept"/>
+	<mapping class="com.excelr.ExcelrAugHibernate.entity.Employee"/>
+	<mapping class="com.excelr.ExcelrAugHibernate.entity.Actor"/>
+	<mapping class="com.excelr.ExcelrAugHibernate.entity.Movie"/>
 		
 </session-factory>
 </hibernate-configuration>
