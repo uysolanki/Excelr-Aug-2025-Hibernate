@@ -7,7 +7,7 @@ import org.hibernate.cfg.Configuration;
 
 import com.excelr.ExcelrAugHibernate.entity.Student;
 
-public class App 
+public class GetDemo 
 {
     public static void main( String[] args )
     {
@@ -15,16 +15,15 @@ public class App
     	cfg.configure("hibernate.cfg.xml");
     	SessionFactory factory=cfg.buildSessionFactory();
     	    	
-    	Session session1=  factory.openSession();
-    	Transaction tx=session1.beginTransaction();   //for executing DML queries
+    	Session session1=  factory.openSession();  //session is empty
     	
-    	Student s1=new Student(4,"Chris",87.5);
-    	session1.save(s1);
-    	tx.commit();
+    	Student stud1=session1.get(Student.class,5);	//database query : YES
+    	System.out.println("First Time "+ stud1);
     	
-    	System.out.println("Record Inserted");
+    	Student stud2=session1.get(Student.class, 2);	//database query : YES
+    	System.out.println("Second Time "+ stud2);
     	
-    	
+    	System.out.println(stud1==stud2);  //false
     	session1.close();
     	factory.close();
 
